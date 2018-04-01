@@ -34,6 +34,6 @@ library
   extra-libraries: stdc++
 
   -- haskell
-  ghc-options: -Wall -fllvm
+  ghc-options: -Wall
   hs-source-dirs: src
   exposed-modules: DD
