@@ -21,10 +21,10 @@ source-repository head
 
 library
   default-language: Haskell2010
-  cc-options: -mavx -mavx2 -std=c++14
+  cc-options:  -Wall -mavx -mavx2 -std=c++14
+  ghc-options: -Wall -fllvm
   extra-libraries: stdc++
   exposed-modules: DD
-  ghc-options: -Wall
   build-depends:
     base >= 4.9 && < 5,
     inline-c,
