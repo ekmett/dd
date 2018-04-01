@@ -21,15 +21,19 @@ source-repository head
 
 library
   default-language: Haskell2010
-  cc-options:  -Wall -mavx -mavx2 -std=c++14
-  ghc-options: -Wall -fllvm
-  hs-source-dirs: src
-  include-dirs: c
-  c-sources: c/bar.cpp
-  extra-libraries: stdc++
-  exposed-modules: DD
   build-depends:
     base >= 4.9 && < 5,
     heredoc,
     inline-c,
     inline-c-cpp
+
+  -- c++ 
+  cc-options:  -Wall -mavx -mavx2 -std=c++14
+  include-dirs: cpp
+  c-sources: cpp/bar.cpp
+  extra-libraries: stdc++
+
+  -- haskell
+  ghc-options: -Wall -fllvm
+  hs-source-dirs: src
+  exposed-modules: DD
