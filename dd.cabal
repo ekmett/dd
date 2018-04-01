@@ -1,0 +1,31 @@
+name:          dd
+version:       0
+license:       BSD2
+license-File:  LICENSE
+copyright:     (c) Edward Kmett 2018
+author:        Edward Kmett
+maintainer:    ekmett@gmail.com
+stability:     Experimental
+category:      Logic
+homepage:      http://github.com/ekmett/dd
+bug-reports:   http://github.com/ekmett/dd/issues
+build-type:    Simple
+cabal-version: 2
+synopsis:      Binary Decision Diagrams
+description:   Binary Decision Diagrams.
+extra-source-files: .gitignore
+
+source-repository head
+  type: git
+  location: git://github.com/ekmett/dd.git
+
+library
+  default-language: Haskell2010
+  cc-options: -mavx -mavx2
+  extra-libraries: stdc++
+  exposed-modules: DD
+  ghc-options: -Wall
+  build-depends:
+    base >= 4.9 && < 5,
+    inline-c,
+    inline-c-cpp
